@@ -1,0 +1,11 @@
+export 'exercise.dart';
+export 'game.dart';
+export 'home.dart';
+export 'login.dart';
+export 'dictionary.dart';
+export 'word_scanning.dart';
+export 'new_result.dart';
+export 'settings.dart';
+export 'profile_page.dart';
+export 'account.dart';
+export 'about_page.dart';
