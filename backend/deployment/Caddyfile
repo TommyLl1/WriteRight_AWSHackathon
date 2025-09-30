@@ -1,0 +1,67 @@
+(corsImage) {
+        @images {
+                path_regexp \.(png|jpg|jpeg|gif|webp|svg)$
+        }
+        header @images Access-Control-Allow-Origin "*"
+        header @images Access-Control-Allow-Methods "GET, OPTIONS"
+}
+
+(cors) {
+        @origin header Origin {args.0}
+        header @origin {
+                Access-Control-Allow-Origin "{args.0}"
+                Access-Control-Request-Method "GET, OPTIONS"
+        }
+}
+
+(production) {
+        file_server browse {
+                # Serve static files from the uploads directory
+                root /var/lib/writeright/uploads
+        }
+        handle @writeright-api {
+                uri strip_prefix /api-9687094a
+                reverse_proxy localhost:8000
+        }
+}
+
+(staging) {
+
+        handle @writeright-api {
+                reverse_proxy https://example2.com {
+                        header_up Host {upstream_hostport}
+                        # Cloudflare hotlink protection workaround
+                        header_up -Referer
+                }
+        }
+        # static files for images, equivlant to file_server in production
+        # 
+        handle * {
+                rewrite * /files{uri}
+                reverse_proxy https://example2.com {
+                        header_up Host {upstream_hostport}
+                        # Cloudflare hotlink protection workaround
+                        header_up -Referer
+                }
+        }
+
+}
+example.com {
+        # Set this path to your site's directory.
+#       root * /opt/writeright-backend/uploads
+
+        # Discarding logs unless needed later, for now avoid unnecessarey disk writes
+#       log
+        import corsImage
+        log discard
+
+        @writeright-api {
+                path /api-9687094a/*
+        }
+
+########## Change to switch to backup
+
+        import production
+#       import staging
+
+}

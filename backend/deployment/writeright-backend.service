@@ -1,0 +1,17 @@
+[Unit]
+Description=WriteRight FastAPI Service
+After=network.target
+
+[Service]
+User=writeright-backend
+Group=writeright-shared
+WorkingDirectory=/opt/writeright-backend
+Environment="PATH=/opt/writeright-backend/.venv/bin:$PATH"
+Environment="VIRTUAL_ENV=/opt/writeright-backend/.venv"
+EnvironmentFile=/opt/writeright-backend/.env
+ExecStart=/opt/writeright-backend/.venv/bin/uvicorn app:app --host 0.0.0.0 --port 8000 --root-path /api-9687094a --timeout-graceful-shutdown 30
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

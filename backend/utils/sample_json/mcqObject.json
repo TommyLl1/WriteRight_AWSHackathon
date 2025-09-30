@@ -1,0 +1,40 @@
+{
+    "minChoices": 1,
+    "maxChoices": 3,
+    "choices": [
+        {
+            "option_id": 1,
+            "text": "Apple"
+        },
+        {
+            "option_id": 2,
+            "image": "https://example.com/apple.png"
+        },
+        {
+            "option_id": 3,
+            "text": "Banana"
+        },
+        {
+            "option_id": 4,
+            "text": "Cherry"
+        }
+    ],
+    "strictOrder": true,
+    "randomize": false,
+    "timeLimit": 0,
+    "display": {
+        "type": "grid",
+        "rows": 2,
+        "columns": 2
+    },
+    "answers": [
+        {
+            "answer_id": 1,
+            "choices": [1, 2]
+        },
+        {
+            "answer_id": 2,
+            "choices": [3, 4]
+        }
+    ]
+}

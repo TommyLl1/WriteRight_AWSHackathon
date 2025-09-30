@@ -1,0 +1,6 @@
+{
+    "target": "字",
+    "timeLimit": 10,
+    "submit_url": "https://example.com/htr/submit",
+    "background_image": "https://example.com/handwrite/background.png"
+}

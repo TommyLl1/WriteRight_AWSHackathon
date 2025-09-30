@@ -1,0 +1,50 @@
+{
+    "pairs": [
+        {
+            "pair_id": 1,
+            "items": [
+                {
+                    "option_id": 101,
+                    "text": "Apple"
+                },
+                {
+                    "option_id": 102,
+                    "image": "https://example.com/apple.png"
+                }
+            ]
+        },
+        {
+            "pair_id": 2,
+            "items": [
+                {
+                    "option_id": 201,
+                    "text": "Banana"
+                },
+                {
+                    "option_id": 202,
+                    "image": "https://example.com/banana.png"
+                }
+            ]
+        },
+        {
+            "pair_id": 3,
+            "items": [
+                {
+                    "option_id": 301,
+                    "text": "Cherry"
+                },
+                {
+                    "option_id": 302,
+                    "image": "https://example.com/cherry.png"
+                }
+            ]
+        }
+    ],
+    "randomize": true,
+    "timeLimit": 0,
+    "display": {
+        "type": "grid",
+        "rows": 2,
+        "columns": 3
+    }
+}
