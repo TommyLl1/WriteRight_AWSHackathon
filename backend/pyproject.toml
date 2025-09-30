@@ -1,0 +1,6 @@
+[tool.black]
+line-length = 88
+include = '\.py$'
+exclude = '''
+/(__pycache__|\.git|\.hg|\.mypy_cache|\.tox|\.venv|build|dist)/
+'''

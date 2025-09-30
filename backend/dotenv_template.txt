@@ -1,0 +1,20 @@
+SUPABASE_URL="https://REPLACE.supabase.co"
+SUPABASE_SERVICE_KEY=""
+OPENAI_API_KEY = ""
+OPENAI_API_PATH = ""
+
+# Database Configuration
+# Set to "supabase" or "postgresql"
+DATABASE_TYPE="postgresql"
+
+# PostgreSQL Configuration (only needed if DATABASE_TYPE=postgresql)
+POSTGRES_HOST="db.REPLACE.supabase.co"
+POSTGRES_PORT="5432"
+POSTGRES_DB="postgres"
+POSTGRES_USER="postgres"
+POSTGRES_PASSWORD=""
+
+# Authentication Configuration
+# Pepper for password hashing - MUST be kept secret and consistent
+# Generate a strong, random value and store securely
+PASSWORD_PEPPER="your_secret_pepper_change_this_in_production"

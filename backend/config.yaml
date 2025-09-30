@@ -1,0 +1,47 @@
+Cognito:
+  UserPoolId: "us-east-1_123456789"
+  ClientId: "1234567890abcdefg"
+  Region: "us-east-1"
+
+Postgres:
+  Host: "localhost"
+  Port: 5432
+
+QuestionGenerator:
+  Weighting:
+    Time: 1.0
+    Count: 2.0
+  NumQuestions: 5
+  TopNRecent: 50
+  IsAIEnabled: false
+  FillInVocab:
+    MaxTokens: 300
+  # Enhanced Question Service Configuration
+  MaxWords: 20
+  MaxQuestionsPerWord: 50
+  GoodnessThreshold: 0.75
+  AgeDecayHours: 168  # 1 week
+  Batch:
+    MaxTokens: 300
+  RevisionPriority:
+    Randomness: 50
+    RandomSigma: 10
+  QuestionClassify:
+    SigmoidSteepness: 10
+
+Logger:
+  DefaultLevel: "DEBUG"
+
+WrongWordDictionary:
+  PageSize: 10
+
+LLM:
+  MaxTokens: 100
+
+User:
+  LvGrowthRate: 1.5
+
+ENV:
+  GOOGLE_OCR:
+    PATH: "/env/sunlit-monolith-456716-f0-3c01b4000320.json"
+
